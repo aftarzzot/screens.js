@@ -1,0 +1,42 @@
+@import "../../common/common.less";
+
+@progress__horizontal_height: 3px;
+@progress__vertical_width: 3px;
+@progress__background: rgba(0,0,0, 0);
+@progress__bar_color: #0c0;
+@progress__z-index: 10;
+
+.screen-progress {
+	.debug(false, #0c0);
+	.box-sizing();
+	z-index: @progress__z-index;
+	position: fixed;
+	background-color: @progress__background;
+	&_top,
+	&_bottom {
+		.size(100%, @progress__horizontal_height);
+		left: 0;
+	}
+	&_top {
+		top: 0;
+	}
+	&_bottom {
+		bottom: 0;
+	}
+	&_left,
+	&_right {
+		.size(@progress__vertical_width, 100%);
+		top: 0;
+	}
+	&_left {
+		left: 0;
+	}
+	&_right {
+		right: 0;
+	}
+	&__bar {
+		.box-sizing();
+		.transition(.5s);
+		background-color: @progress__bar_color;
+	}
+}

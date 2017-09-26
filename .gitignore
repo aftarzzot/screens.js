@@ -1,0 +1,6 @@
+*.DS_Store
+.idea
+.env
+www/css/style.css
+*Distrib
+

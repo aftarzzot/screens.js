@@ -1,0 +1,42 @@
+@import "../../common/common.less";
+@import "bullets.less";
+@import "progress.less";
+
+.screen-wrapper {
+	.debug(false);
+	.box-sizing();
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+.screen {
+	.size(100%, auto);
+	.box-sizing();
+	.debug(true);
+	min-height: 300px;
+
+	&_height100 {
+		min-height: 100%;
+	}
+
+	&__content {
+		.debug(false);
+		.size(100%, auto);
+		.box-sizing();
+		margin: 0 auto;
+		position: relative;
+		z-index: 5;
+
+		&_showed {
+			.transform(~'matrix(1,0,0,1,0,0)') !important;
+			opacity: 1 !important;
+		}
+
+		&:not(.screen__content_no-fade) {
+			.transition(.5s);
+			.transform(~'matrix(1,0,0,1,0,150)');
+			opacity: 0;
+		}
+	}
+}

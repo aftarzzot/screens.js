@@ -1,0 +1,28 @@
+@import "common/common.less";
+@import "blocks/screen/screen.less";
+
+
+
+html {
+	.square(100%);
+	.box-sizing();
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	.size(100%, 100%);
+	.box-sizing();
+	.default-text();
+	.debug(false);
+	margin: 0;
+	padding: 0;
+	min-width: 320px;
+
+	&.stop-scrolling {
+		position: fixed;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+	}
+}
